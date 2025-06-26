@@ -361,8 +361,15 @@ export default function HomePage() {
                   <MessageCircle className="mr-2 h-4 w-4" />
                   Contact Us Today
                 </Button>
-                <Button variant="outline" size="lg" className="border-slate-800 text-slate-800 hover:bg-slate-50">
-                  hello@breakfreedigitalagency.com
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="border-slate-800 text-slate-800 hover:bg-slate-50"
+                >
+                  <a href="mailto:hello@breakfreedigitalagency.com">
+                    hello@breakfreedigitalagency.com
+                  </a>
                 </Button>
               </div>
             </div>
