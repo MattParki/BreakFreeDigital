@@ -362,7 +362,7 @@ export default function HomePage() {
                   Contact Us Today
                 </Button>
                 <Button variant="outline" size="lg" className="border-slate-800 text-slate-800 hover:bg-slate-50">
-                  hello@breakfreedigital.com
+                  hello@breakfreedigitalagency.com
                 </Button>
               </div>
             </div>
