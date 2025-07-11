@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
+import { Services } from "@/components/services"
 
 export default function HomePage() {
   return (
@@ -14,107 +15,7 @@ export default function HomePage() {
 
       <main className="flex-1">
         <Hero />
-
-        {/* Services Section */}
-        <section id="services" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Services</h2>
-                <p className="max-w-[900px] text-gray-600 md:text-xl">
-                  We specialize in creating digital products that make a difference
-                </p>
-              </div>
-            </div>
-            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3">
-              <Card className="border-2 hover:border-slate-200 transition-colors">
-                <CardHeader className="text-center">
-                  <Globe className="h-12 w-12 mx-auto text-slate-800" />
-                  <CardTitle>Website Design & Development</CardTitle>
-                  <CardDescription>
-                    Custom websites that are fast, responsive, and optimized for conversions
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                      Responsive Design
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                      SEO Optimization
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                      Performance Focused
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                      CMS Integration
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-              <Card className="border-2 hover:border-slate-200 transition-colors">
-                <CardHeader className="text-center">
-                  <Smartphone className="h-12 w-12 mx-auto text-slate-800" />
-                  <CardTitle>Mobile App Development</CardTitle>
-                  <CardDescription>
-                    Native and cross-platform apps that deliver exceptional user experiences
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                      iOS & Android
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                      Cross-Platform Solutions
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                      UI/UX Design
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                      App Store Deployment
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-              <Card className="border-2 hover:border-slate-200 transition-colors">
-                <CardHeader className="text-center">
-                  <Zap className="h-12 w-12 mx-auto text-slate-800" />
-                  <CardTitle>Digital Strategy</CardTitle>
-                  <CardDescription>Comprehensive digital solutions tailored to your business goals</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                      Technology Consulting
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                      Digital Transformation
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                      Maintenance & Support
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                      Analytics & Optimization
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
+        <Services />
 
         {/* Plans Section */}
         <section id="plans" className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
