@@ -129,28 +129,6 @@ export function Hero() {
               <div className="text-sm text-gray-600">Latest frameworks</div>
             </div>
           </div>
-
-          {/* Technology badges */}
-          <div className={`pt-16 transition-all duration-1000 delay-1200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <p className="text-sm text-gray-500 mb-6">Built with cutting-edge technology</p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Badge variant="outline" className="bg-white/80 backdrop-blur-sm border-gray-200 text-gray-700 px-3 py-1">
-                React
-              </Badge>
-              <Badge variant="outline" className="bg-white/80 backdrop-blur-sm border-gray-200 text-gray-700 px-3 py-1">
-                Next.js
-              </Badge>
-              <Badge variant="outline" className="bg-white/80 backdrop-blur-sm border-gray-200 text-gray-700 px-3 py-1">
-                TypeScript
-              </Badge>
-              <Badge variant="outline" className="bg-white/80 backdrop-blur-sm border-gray-200 text-gray-700 px-3 py-1">
-                Tailwind CSS
-              </Badge>
-              <Badge variant="outline" className="bg-white/80 backdrop-blur-sm border-gray-200 text-gray-700 px-3 py-1">
-                Node.js
-              </Badge>
-            </div>
-          </div>
         </div>
       </div>
 

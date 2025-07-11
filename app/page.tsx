@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { Services } from "@/components/services"
+import { Plans } from "@/components/plans"
 
 export default function HomePage() {
   return (
@@ -16,139 +17,7 @@ export default function HomePage() {
       <main className="flex-1">
         <Hero />
         <Services />
-
-        {/* Plans Section */}
-        <section id="plans" className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Plans</h2>
-                <p className="max-w-[900px] text-gray-600 md:text-xl">
-                  Every project is unique. Let's discuss your specific needs and create a custom solution.
-                </p>
-              </div>
-            </div>
-            <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-3">
-              <Card className="relative">
-                <CardHeader>
-                  <CardTitle className="text-xl">Starter</CardTitle>
-                  <CardDescription>Perfect for small businesses and startups</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-2">
-                    <p className="text-sm text-gray-600">Includes:</p>
-                    <ul className="space-y-1 text-sm">
-                      <li className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                        Custom website design
-                      </li>
-                      <li className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                        Mobile responsive
-                      </li>
-                      <li className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                        Basic SEO setup
-                      </li>
-                      <li className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-600 mr-2" />3 months support
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="pt-4">
-                    <Button className="w-full bg-slate-800 hover:bg-slate-900">
-                      <MessageCircle className="mr-2 h-4 w-4" />
-                      Contact for Pricing
-                    </Button>
-                    <p className="text-xs text-gray-500 mt-2 text-center">Pricing varies based on requirements</p>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card className="relative border-slate-200 border-2">
-                <Badge className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-slate-800">Most Popular</Badge>
-                <CardHeader>
-                  <CardTitle className="text-xl">Professional</CardTitle>
-                  <CardDescription>Ideal for growing businesses</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-2">
-                    <p className="text-sm text-gray-600">Everything in Starter, plus:</p>
-                    <ul className="space-y-1 text-sm">
-                      <li className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                        Advanced functionality
-                      </li>
-                      <li className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                        CMS integration
-                      </li>
-                      <li className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                        E-commerce capabilities
-                      </li>
-                      <li className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-600 mr-2" />6 months support
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="pt-4">
-                    <Button className="w-full bg-slate-800 hover:bg-slate-900">
-                      <MessageCircle className="mr-2 h-4 w-4" />
-                      Contact for Pricing
-                    </Button>
-                    <p className="text-xs text-gray-500 mt-2 text-center">Custom quote based on scope</p>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card className="relative">
-                <CardHeader>
-                  <CardTitle className="text-xl">Enterprise</CardTitle>
-                  <CardDescription>For large-scale projects and organizations</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-2">
-                    <p className="text-sm text-gray-600">Everything in Professional, plus:</p>
-                    <ul className="space-y-1 text-sm">
-                      <li className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                        Custom app development
-                      </li>
-                      <li className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                        API integrations
-                      </li>
-                      <li className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                        Dedicated support
-                      </li>
-                      <li className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-600 mr-2" />
-                        12 months support
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="pt-4">
-                    <Button className="w-full bg-slate-800 hover:bg-slate-900">
-                      <MessageCircle className="mr-2 h-4 w-4" />
-                      Contact for Pricing
-                    </Button>
-                    <p className="text-xs text-gray-500 mt-2 text-center">Tailored solutions & pricing</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-            <div className="text-center mt-8">
-              <p className="text-gray-600 mb-4">
-                {
-                  "Every project has unique requirements. We'll work with you to create a custom solution that fits your budget and goals."
-                }
-              </p>
-              <Button variant="outline" size="lg" className="border-slate-800 text-slate-800 hover:bg-slate-50">
-                Schedule a Free Consultation
-              </Button>
-            </div>
-          </div>
-        </section>
+        <Plans />
 
         {/* About Section */}
         <section id="about" className="w-full py-12 md:py-24 lg:py-32">
