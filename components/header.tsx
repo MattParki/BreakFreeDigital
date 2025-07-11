@@ -3,10 +3,13 @@
 import { Zap, Menu, X } from "lucide-react"
 import Link from "next/link"
 import { useState, useEffect } from "react"
+import { useRouter, usePathname } from "next/navigation"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const router = useRouter()
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +20,36 @@ export function Header() {
   }, [])
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+
+  const handleSectionNavigation = (sectionId: string) => {
+    // Close mobile menu
+    setIsMenuOpen(false)
+    
+    // If we're on the home page, scroll to section
+    if (pathname === '/') {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    } else {
+      // Navigate to home page with section hash
+      router.push(`/#${sectionId}`)
+    }
+  }
+
+  // Handle scroll to section after navigation
+  useEffect(() => {
+    const hash = window.location.hash
+    if (hash && pathname === '/') {
+      const sectionId = hash.substring(1)
+      setTimeout(() => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 100) // Small delay to ensure page is loaded
+    }
+  }, [pathname])
 
   return (
     <>
@@ -29,7 +62,7 @@ export function Header() {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo/Brand */}
-            <Link className="flex items-center space-x-3 group" href="#">
+            <Link className="flex items-center space-x-3 group" href="/">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur-sm opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
                 <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg">
@@ -47,38 +80,38 @@ export function Header() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-12">
-              <Link 
+              <button 
                 className="relative text-sm font-medium text-gray-700 hover:text-gray-900 transition-all duration-300 group py-2 px-3" 
-                href="#services"
+                onClick={() => handleSectionNavigation('services')}
               >
                 <span className="relative z-10">Services</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 ease-out"></div>
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></div>
-              </Link>
-              <Link 
+              </button>
+              <button 
                 className="relative text-sm font-medium text-gray-700 hover:text-gray-900 transition-all duration-300 group py-2 px-3" 
-                href="#plans"
+                onClick={() => handleSectionNavigation('plans')}
               >
                 <span className="relative z-10">Plans</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 ease-out"></div>
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></div>
-              </Link>
+              </button>
               <Link 
                 className="relative text-sm font-medium text-gray-700 hover:text-gray-900 transition-all duration-300 group py-2 px-3" 
-                href="#about"
+                href="/about"
               >
                 <span className="relative z-10">About</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 ease-out"></div>
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></div>
               </Link>
-              <Link 
+              <button 
                 className="relative text-sm font-medium text-gray-700 hover:text-gray-900 transition-all duration-300 group py-2 px-3" 
-                href="#contact"
+                onClick={() => handleSectionNavigation('contact')}
               >
                 <span className="relative z-10">Contact</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 ease-out"></div>
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full transition-all duration-300"></div>
-              </Link>
+              </button>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -102,34 +135,31 @@ export function Header() {
               : 'max-h-0 opacity-0 overflow-hidden'
           }`}>
             <nav className="py-6 space-y-1 border-t border-gray-200/50 bg-white/98 backdrop-blur-md rounded-b-lg">
-              <Link 
-                className="block text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-200 py-3 px-4 rounded-lg mx-2" 
-                href="#services"
-                onClick={() => setIsMenuOpen(false)}
+              <button 
+                className="block w-full text-left text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-200 py-3 px-4 rounded-lg mx-2" 
+                onClick={() => handleSectionNavigation('services')}
               >
                 Services
-              </Link>
-              <Link 
-                className="block text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-200 py-3 px-4 rounded-lg mx-2" 
-                href="#plans"
-                onClick={() => setIsMenuOpen(false)}
+              </button>
+              <button 
+                className="block w-full text-left text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-200 py-3 px-4 rounded-lg mx-2" 
+                onClick={() => handleSectionNavigation('plans')}
               >
                 Plans
-              </Link>
+              </button>
               <Link 
                 className="block text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-200 py-3 px-4 rounded-lg mx-2" 
-                href="#about"
+                href="/about"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </Link>
-              <Link 
-                className="block text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-200 py-3 px-4 rounded-lg mx-2" 
-                href="#contact"
-                onClick={() => setIsMenuOpen(false)}
+              <button 
+                className="block w-full text-left text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-200 py-3 px-4 rounded-lg mx-2" 
+                onClick={() => handleSectionNavigation('contact')}
               >
                 Contact
-              </Link>
+              </button>
             </nav>
           </div>
         </div>

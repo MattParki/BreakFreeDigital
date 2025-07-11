@@ -19,60 +19,7 @@ export default function HomePage() {
         <Services />
         <Plans />
 
-        {/* About Section */}
-        <section id="about" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">About BreakFree Digital</h2>
-                  <p className="max-w-[600px] text-gray-600 md:text-xl">
-                    We're a team of passionate developers and designers who believe in the power of great digital
-                    products.
-                  </p>
-                </div>
-                <div className="space-y-4">
-                  <p className="text-gray-600">
-                    With years of experience in web development and mobile app creation, we've helped businesses of all
-                    sizes transform their ideas into successful digital products. Our approach combines cutting-edge
-                    technology with user-centered design to deliver solutions that not only look great but perform
-                    exceptionally.
-                  </p>
-                  <p className="text-gray-600">
-                    Every project is unique, which is why we take the time to understand your specific needs,
-                    challenges, and goals before proposing a solution. This personalized approach ensures that you get
-                    exactly what you need, when you need it.
-                  </p>
-                </div>
-              </div>
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="grid gap-4">
-                  <div className="flex items-center space-x-4">
-                    <Users className="h-8 w-8 text-slate-800" />
-                    <div>
-                      <h3 className="font-bold">Expert Team</h3>
-                      <p className="text-sm text-gray-600">Skilled developers and designers</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <Zap className="h-8 w-8 text-slate-800" />
-                    <div>
-                      <h3 className="font-bold">Fast Delivery</h3>
-                      <p className="text-sm text-gray-600">Efficient project management</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <CheckCircle className="h-8 w-8 text-slate-800" />
-                    <div>
-                      <h3 className="font-bold">Quality Assured</h3>
-                      <p className="text-sm text-gray-600">Rigorous testing and optimization</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+
 
         {/* Our Work Section */}
         <section id="work" className="w-full py-12 md:py-24 lg:py-32 bg-slate-900 text-white">
@@ -287,7 +234,7 @@ export default function HomePage() {
               <p className="text-slate-300 mb-6">Ready to see your project featured here?</p>
               <Button asChild size="lg" className="bg-white text-slate-900 hover:bg-slate-100">
                 <Link href="#contact">
-                  Start Your Project
+                  Get In Touch
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
