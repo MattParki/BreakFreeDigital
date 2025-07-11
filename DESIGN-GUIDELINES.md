@@ -48,6 +48,37 @@ Pure White:     #ffffff
 - **Portfolio**: Dark navy (slate-900) for dramatic effect
 - **Contact**: Light gray (gray-50) for warmth
 
+### Modern Gradient Patterns
+```css
+/* Header Gradients */
+.header-initial {
+  background: linear-gradient(to right, rgb(248 250 252 / 0.95), rgb(239 246 255 / 0.95));
+  backdrop-filter: blur(4px);
+}
+
+.header-scrolled {
+  background: rgb(255 255 255 / 0.98);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+/* Brand Text Gradients */
+.brand-gradient {
+  background: linear-gradient(to right, #111827, #1e40af, #7c3aed);
+  background-clip: text;
+  color: transparent;
+}
+
+/* Interactive Gradients */
+.hover-gradient {
+  background: linear-gradient(to right, rgb(239 246 255), rgb(245 243 255));
+}
+
+.accent-gradient {
+  background: linear-gradient(to right, #2563eb, #9333ea);
+}
+```
+
 ## 📱 Typography
 
 ### Font Stack
@@ -133,14 +164,49 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, san
 
 ### Navigation
 ```css
+/* Modern Navigation Links */
 .nav-link {
-  color: #64748b;
+  position: relative;
+  color: #374151; /* gray-700 */
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0.75rem;
 }
 
 .nav-link:hover {
-  color: #1e293b;
+  color: #111827; /* gray-900 */
+}
+
+/* Hover Background Effect */
+.nav-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgb(239 246 255), rgb(245 243 255));
+  border-radius: 0.5rem;
+  transform: scale(0);
+  transition: transform 0.3s ease-out;
+  z-index: -1;
+}
+
+.nav-link:hover::before {
+  transform: scale(1);
+}
+
+/* Underline Effect */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #2563eb, #9333ea);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 ```
 
@@ -187,10 +253,54 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, san
   transition: transform 0.2s ease;
 }
 
+/* Modern Scale Effects */
+.scale-hover {
+  transition: transform 0.3s ease-out;
+}
+
+.scale-hover:hover {
+  transform: scale(1);
+}
+
+.scale-hover::before {
+  transform: scale(0);
+  transition: transform 0.3s ease-out;
+}
+
+.scale-hover:hover::before {
+  transform: scale(1);
+}
+
+/* Backdrop Blur Effects */
+.backdrop-blur-light {
+  backdrop-filter: blur(4px);
+}
+
+.backdrop-blur-medium {
+  backdrop-filter: blur(8px);
+}
+
+.backdrop-blur-heavy {
+  backdrop-filter: blur(12px);
+}
+
 /* Focus States */
 .focus-ring:focus {
   outline: 2px solid #3b82f6;
   outline-offset: 2px;
+}
+
+/* Smooth Transitions */
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.transition-colors {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.transition-transform {
+  transition: transform 0.3s ease;
 }
 ```
 
@@ -218,6 +328,43 @@ font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, san
 - **Size**: 16px, 20px, 24px, 32px, 48px
 - **Weight**: Medium stroke weight for consistency
 - **Color**: Inherit text color or use brand colors
+
+### Modern Icon Containers
+```css
+/* Gradient Icon Container */
+.icon-container {
+  position: relative;
+  background: linear-gradient(to right, #2563eb, #9333ea);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+/* Glow Effect */
+.icon-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #2563eb, #9333ea);
+  border-radius: 0.5rem;
+  filter: blur(4px);
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.icon-container:hover::before {
+  opacity: 0.5;
+}
+
+/* Status Indicators */
+.status-dot {
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(to right, #f97316, #dc2626);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+```
 
 ### Logo Usage
 - **Primary**: Dark navy (#1e293b) on light backgrounds
