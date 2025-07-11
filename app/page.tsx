@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Header } from "@/components/header"
+import { Hero } from "@/components/hero"
 
 export default function HomePage() {
   return (
@@ -12,31 +13,7 @@ export default function HomePage() {
       <Header />
 
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-slate-50 to-blue-50">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-                  Break Free from Digital Limitations
-                </h1>
-                <p className="mx-auto max-w-[700px] text-gray-600 md:text-xl">
-                  We transform your ideas into powerful digital products. From stunning websites to innovative mobile
-                  apps, we deliver solutions that drive your business forward.
-                </p>
-              </div>
-              <div className="space-x-4">
-                <Button size="lg" className="bg-slate-800 hover:bg-slate-900">
-                  Get Started
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button variant="outline" size="lg" className="border-slate-800 text-slate-800 hover:bg-slate-50">
-                  View Our Work
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Hero />
 
         {/* Services Section */}
         <section id="services" className="w-full py-12 md:py-24 lg:py-32">
